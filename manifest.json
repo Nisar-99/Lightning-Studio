@@ -1,0 +1,21 @@
+{
+  "name": "Lightning Studio",
+  "description": "Build Salesforce LWC development easy and fastest.",
+  "manifest_version": 3,
+  "version": "3.0",
+  "author": "nisarahmad.ajmer@gmail.com",
+  "action": {},
+  "background": {
+    "service_worker": "background.js"
+  },
+  "minimum_chrome_version": "100",
+  "permissions": [
+    "cookies"
+  ],
+  "icons": {
+    "32": "/assets/images/icon32.png"
+  },
+  "host_permissions": [
+    "https://*.salesforce.com/*"
+  ]
+}
