@@ -1,2 +1,2 @@
 # Lightning-Studio
-## Build Salesforce LWC development easy and fastest.
+### Build Salesforce LWC development easy and fastest.
