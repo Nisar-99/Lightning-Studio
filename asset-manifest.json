@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Lightning-Studio/static/css/main.be9081dd.css",
+    "main.js": "/Lightning-Studio/static/js/main.b699be86.js",
+    "static/js/453.ab598d73.chunk.js": "/Lightning-Studio/static/js/453.ab598d73.chunk.js",
+    "index.html": "/Lightning-Studio/index.html",
+    "main.be9081dd.css.map": "/Lightning-Studio/static/css/main.be9081dd.css.map",
+    "main.b699be86.js.map": "/Lightning-Studio/static/js/main.b699be86.js.map",
+    "453.ab598d73.chunk.js.map": "/Lightning-Studio/static/js/453.ab598d73.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.be9081dd.css",
+    "static/js/main.b699be86.js"
+  ]
+}
