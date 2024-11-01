@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Lightning-Studio/static/css/main.be9081dd.css",
-    "main.js": "/Lightning-Studio/static/js/main.bafba02b.js",
+    "main.js": "/Lightning-Studio/static/js/main.619af34a.js",
     "static/js/453.ab598d73.chunk.js": "/Lightning-Studio/static/js/453.ab598d73.chunk.js",
     "index.html": "/Lightning-Studio/index.html",
     "main.be9081dd.css.map": "/Lightning-Studio/static/css/main.be9081dd.css.map",
-    "main.bafba02b.js.map": "/Lightning-Studio/static/js/main.bafba02b.js.map",
+    "main.619af34a.js.map": "/Lightning-Studio/static/js/main.619af34a.js.map",
     "453.ab598d73.chunk.js.map": "/Lightning-Studio/static/js/453.ab598d73.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.be9081dd.css",
-    "static/js/main.bafba02b.js"
+    "static/js/main.619af34a.js"
   ]
 }
