@@ -15,7 +15,7 @@ function App() {
 
 
   useEffect(() => {
-    window.AOS.init();
+    // window.AOS.init();
     runCheck();
   }, []);
 
@@ -24,6 +24,11 @@ function App() {
     setHasAdBlock(adBlockDetected);
     console.log('AdBlockChecker : ', adBlockDetected);
   };
+
+
+  // if (hasAdBlock === true) {
+  //   return (<NoAccess/>)
+  // }
 
 
   return (

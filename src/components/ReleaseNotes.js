@@ -16,6 +16,14 @@ export default function initialize() {
                         <h2 class="font-playfair display-5 link-body-emphasis mb-3">Release Notes</h2>
                         <hr/>
 
+                        <article class="blog-post">
+                                <p class="h5"><b>v3.0.8</b></p>
+                                <ul>
+                                    <li>Resolved the issue related to invalid session IDs.</li>
+                                    <li>Fixed the problem with creating new LWC files. <a href='https://github.com/Nisar-99/Lightning-Studio/issues/6'>Issue #6</a></li> 
+                                </ul>
+                            </article>
+
                             <article class="blog-post">
                                 <p class="h5"><b>v3.0.7</b></p>
                                 <ul>

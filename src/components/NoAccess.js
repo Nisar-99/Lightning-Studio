@@ -5,7 +5,7 @@ export default function initialize() {
                 <div class="card">
                     <div class="card-body">
                         <div>
-                            <svg fill="#FFFFFF" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                            <svg fill="#ed143d" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                                 height="60px" viewBox="0 0 106.059 106.059"
                             >
                                 <g>
@@ -27,9 +27,9 @@ export default function initialize() {
                             activated Ad-Blocker.
                             Please consider supporting us by
                             disabling your Ad-Blocker, it helps us
-                            in developing this Website.<br />
+                            in developing this tool.<br />
                             Thank you!</p>
-                            <a href="chrome://extensions" target="_blank" className="btn btn-secondary">Disable Adblock</a>
+                            {/* <a href="chrome://extensions" target="_blank" className="btn btn-secondary">Disable Adblock</a> */}
                     </div>
                 </div>
             </div>
