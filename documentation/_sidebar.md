@@ -1,4 +1,4 @@
-* [Welcome](/) 
-* [Documentation](documentation.md) 
-* [Feature Highlights](features.md) 
-* [Snippets](cheatsheet.md) 
+* [Welcome](/lightning-studio) 
+* [Documentation](lightning-studio/documentation.md) 
+* [Feature Highlights](/lightning-studio/features.md) 
+* [Snippets](/lightning-studio/cheatsheet.md) 
