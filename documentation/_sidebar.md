@@ -1,4 +1,4 @@
-* [Welcome](/#) 
-* [Documentation](/#/documentation.md) 
-* [Feature Highlights](/#/features.md) 
-* [Snippets](/#/cheatsheet.md) 
+* [Welcome](/) 
+* [Documentation](/documentation.md) 
+* [Feature Highlights](/features.md) 
+* [Snippets](/cheatsheet.md) 
