@@ -4,48 +4,56 @@
 <meta charset="UTF-8" />
 <title>Lightning Studio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 <style>
-
-  
- @font-face {
-      font-family: 'MyLSFont';
-      src: url('./fonts/TH3MACHINE.ttf') format('truetype'), 
-      font-weight: normal;
-      font-style: normal; 
-  }
-  
+/* =======================
+   THEME VARIABLES
+======================= */
 :root {
-  --bg: #f4f6f8;
-  --glass-bg: rgba(255, 255, 255, 0.65);
-  --border: rgba(0, 0, 0, 0.08);
-  --text: #020617;
-  --muted: #475569;
-  --accent: #6366f1;
-  --appcolor: #3e3e3e;
+  --bg: #f5f7fa;
+
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --border: rgba(15, 23, 42, 0.08);
+
+  /* Text */
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+
+  --accent: #4f46e5;
 }
 
 [data-theme="dark"] {
   --bg: #020617;
-  --glass-bg: rgba(15, 23, 42, 0.65);
-  --border: rgba(255, 255, 255, 0.08);
-  --text: #f8fafc;
-  --muted: #94a3b8;
-  --accent: #22d3ee;
-  --appcolor: #b1b6c5;
+
+  /* Glass */
+  --glass-bg: rgba(15, 23, 42, 0.72);
+  --border: rgba(255, 255, 255, 0.10);
+
+  /* Text */
+  --text-primary: #f8fafc;
+  --text-secondary: #e2e8f0;
+  --text-muted: #94a3b8;
+
+  --accent: #38bdf8;
 }
 
+/* =======================
+   BASE STYLES
+======================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Inter, system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
 }
 
 body {
   min-height: 100vh;
   background: var(--bg);
-  color: var(--text);
+  color: var(--text-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,24 +66,26 @@ body {
   text-align: center;
 }
 
-/* HERO */
+/* =======================
+   HERO
+======================= */
 .app-name {
-  font-size: clamp(3.2rem, 7vw, 5rem);
-  font-weight: 100; 
-  letter-spacing: 2px;
-  font-family: 'MyLSFont', system-ui, sans-serif;
-  color: var(--appcolor);
+  font-size: clamp(3.2rem, 7vw, 4.6rem); 
+  letter-spacing: -1.5px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .tagline {
   margin-top: 16px;
   font-size: 1.2rem;
-  color: var(--muted);
+  color: var(--text-secondary);
   max-width: 720px;
   margin-inline: auto;
 }
 
-/* TAGS */
+/* =======================
+   TAGS
+======================= */
 .tags {
   margin-top: 26px;
   display: flex;
@@ -94,10 +104,12 @@ body {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.4px;
-  color: var(--muted);
+  color: var(--text-muted);
 }
 
-/* GLASS PANELS */
+/* =======================
+   GLASS CARDS
+======================= */
 .glass-grid {
   margin-top: 64px;
   display: grid;
@@ -114,28 +126,37 @@ body {
   padding: 32px;
   text-align: left;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow:
+    0 1px 1px rgba(0,0,0,0.04),
+    0 20px 40px rgba(0,0,0,0.12);
 }
 
 .glass-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.18);
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.08),
+    0 30px 60px rgba(0,0,0,0.18);
 }
 
 .glass-card h3 {
   font-size: 1.15rem;
   margin-bottom: 12px;
+  color: var(--text-primary);
 }
 
 .glass-card p {
   font-size: 0.95rem;
   line-height: 1.65;
-  color: var(--muted);
+  color: var(--text-secondary);
 }
 
+/* =======================
+   FOOTER
+======================= */
 footer {
   margin-top: 72px;
   font-size: 0.8rem;
-  color: var(--muted);
+  color: var(--text-muted);
 }
 </style>
 </head>
@@ -143,21 +164,25 @@ footer {
 <body>
 <div class="container">
 
+  <!-- HERO -->
   <h1 class="app-name">LIGHTNING STUDIO</h1>
 
-  <p class="tagline">Build Salesforce LWC development easy and fastest.</p>
+  <p class="tagline">
+    A modern glass-powered workspace for Salesforce developers —
+    fast, focused, and beautifully minimal.
+  </p>
 
   <!-- TAGS -->
   <div class="tags">
-    <span class="tag">LWC</span>
-    <span class="tag">Aura</span>
+    <span class="tag">Salesforce</span>
     <span class="tag">Apex</span>
+    <span class="tag">LWC</span>
     <span class="tag">GraphQL</span>
     <span class="tag">Metadata</span>
     <span class="tag">Dev Tools</span>
   </div>
 
-  <!-- GLASS SECTIONS -->
+  <!-- GLASS CARDS -->
   <div class="glass-grid">
     <div class="glass-card">
       <h3>⚡ Build Faster</h3>
@@ -197,5 +222,6 @@ footer {
     params.get("theme") || "light"
   );
 </script>
+
 </body>
 </html>
