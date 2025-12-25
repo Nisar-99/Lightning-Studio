@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lightning Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --text: #020617;
+      --muted: #475569;
+      --card-bg: rgba(255, 255, 255, 0.7);
+      --border: rgba(0, 0, 0, 0.08);
+      --accent: linear-gradient(135deg, #6366f1, #22d3ee);
+      --glow: rgba(99, 102, 241, 0.25);
+    }
+
+    [data-theme="dark"] {
+      --bg: #020617;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --card-bg: rgba(15, 23, 42, 0.7);
+      --border: rgba(255, 255, 255, 0.08);
+      --glow: rgba(34, 211, 238, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, var(--glow), transparent 40%), var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* HERO */
+    .hero {
+      margin-bottom: 60px;
+    }
+
+    .app-name {
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      font-weight: 900;
+      background: var(--accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -1px;
+    }
+
+    .tagline {
+      margin-top: 16px;
+      font-size: 1.25rem;
+      color: var(--muted);
+      max-width: 720px;
+      margin-inline: auto;
+    }
+
+    /* CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      backdrop-filter: blur(14px);
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      margin-top: 64px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+    <section class="hero">
+      <h1 class="app-name">Lightning Studio</h1>
+      <p class="tagline">
+        The modern workspace for Salesforce developers — build, explore,
+        and ship metadata faster than ever.
+      </p>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h3>⚡ Developer Power</h3>
+        <p>
+          Edit Apex & LWC, run GraphQL and SOQL, manage LMS,
+          and download backups from a single interface.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🧠 Smart Automation</h3>
+        <p>
+          Package XML generation, metadata search,
+          and instant diff checks to reduce manual work.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🚧 Coming Soon</h3>
+        <p>
+          Chrome extension, advanced permissions analyzer,
+          and AI-assisted code review.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Lightning Studio · Built for speed & clarity
+    </footer>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const theme = params.get("theme") || "light";
+    document.documentElement.setAttribute("data-theme", theme);
+  </script>
+
+</body>
+</html>
