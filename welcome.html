@@ -1,162 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Lightning Studio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<title>Lightning Studio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <style>
-    :root {
-      --bg: #f8fafc;
-      --text: #020617;
-      --muted: #475569;
-      --card-bg: rgba(255, 255, 255, 0.7);
-      --border: rgba(0, 0, 0, 0.08);
-      --accent: linear-gradient(135deg, #6366f1, #22d3ee);
-      --glow: rgba(99, 102, 241, 0.25);
-    }
+<style>
+:root {
+  --bg: #f4f6f8;
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --border: rgba(0, 0, 0, 0.08);
+  --text: #020617;
+  --muted: #475569;
+  --accent: #6366f1;
+}
 
-    [data-theme="dark"] {
-      --bg: #020617;
-      --text: #f8fafc;
-      --muted: #94a3b8;
-      --card-bg: rgba(15, 23, 42, 0.7);
-      --border: rgba(255, 255, 255, 0.08);
-      --glow: rgba(34, 211, 238, 0.25);
-    }
+[data-theme="dark"] {
+  --bg: #020617;
+  --glass-bg: rgba(15, 23, 42, 0.65);
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --accent: #22d3ee;
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Inter, system-ui, -apple-system, sans-serif;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, system-ui, sans-serif;
+}
 
-    body {
-      background: radial-gradient(circle at top, var(--glow), transparent 40%), var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-    }
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 20px;
+}
 
-    .container {
-      max-width: 1100px;
-      width: 100%;
-      text-align: center;
-    }
+.container {
+  max-width: 1100px;
+  width: 100%;
+  text-align: center;
+}
 
-    /* HERO */
-    .hero {
-      margin-bottom: 60px;
-    }
+/* HERO */
+.app-name {
+  font-size: clamp(3.2rem, 7vw, 4.6rem);
+  font-weight: 900;
+  letter-spacing: -1.5px;
+}
 
-    .app-name {
-      font-size: clamp(3rem, 6vw, 4.5rem);
-      font-weight: 900;
-      background: var(--accent);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: -1px;
-    }
+.tagline {
+  margin-top: 16px;
+  font-size: 1.2rem;
+  color: var(--muted);
+  max-width: 720px;
+  margin-inline: auto;
+}
 
-    .tagline {
-      margin-top: 16px;
-      font-size: 1.25rem;
-      color: var(--muted);
-      max-width: 720px;
-      margin-inline: auto;
-    }
+/* TAGS */
+.tags {
+  margin-top: 26px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
 
-    /* CARDS */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
+.tag {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--muted);
+}
 
-    .card {
-      backdrop-filter: blur(14px);
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 28px;
-      text-align: left;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+/* GLASS PANELS */
+.glass-grid {
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
 
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    }
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 32px;
+  text-align: left;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
 
-    .card h3 {
-      font-size: 1.15rem;
-      margin-bottom: 10px;
-    }
+.glass-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.18);
+}
 
-    .card p {
-      color: var(--muted);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
+.glass-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 12px;
+}
 
-    footer {
-      margin-top: 64px;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-  </style>
+.glass-card p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+footer {
+  margin-top: 72px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+</style>
 </head>
+
 <body>
+<div class="container">
 
-  <main class="container">
-    <section class="hero">
-      <h1 class="app-name">LIGHTNING STUDIO</h1>
-      <p class="tagline">
-        The modern workspace for Salesforce developers — build, explore,
-        and ship metadata faster than ever.
+  <h1 class="app-name">Lightning Studio</h1>
+
+  <p class="tagline">
+    A modern glass-powered workspace for Salesforce developers —
+    fast, focused, and beautifully minimal.
+  </p>
+
+  <!-- TAGS -->
+  <div class="tags">
+    <span class="tag">Salesforce</span>
+    <span class="tag">Apex</span>
+    <span class="tag">LWC</span>
+    <span class="tag">GraphQL</span>
+    <span class="tag">Metadata</span>
+    <span class="tag">Dev Tools</span>
+  </div>
+
+  <!-- GLASS SECTIONS -->
+  <div class="glass-grid">
+    <div class="glass-card">
+      <h3>⚡ Build Faster</h3>
+      <p>
+        Edit Apex and Lightning Web Components,
+        run queries, and manage metadata from one clean interface.
       </p>
-    </section>
+    </div>
 
-    <section class="grid">
-      <div class="card">
-        <h3>⚡ Developer Power</h3>
-        <p>
-          Edit Apex & LWC, run GraphQL and SOQL, manage LMS,
-          and download backups from a single interface.
-        </p>
-      </div>
+    <div class="glass-card">
+      <h3>🧠 Work Smarter</h3>
+      <p>
+        Generate package XML, compare metadata,
+        and download backups without switching tools.
+      </p>
+    </div>
 
-      <div class="card">
-        <h3>🧠 Smart Automation</h3>
-        <p>
-          Package XML generation, metadata search,
-          and instant diff checks to reduce manual work.
-        </p>
-      </div>
+    <div class="glass-card">
+      <h3>🚀 What’s Next</h3>
+      <p>
+        Chrome extension, permission insights,
+        and AI-assisted code intelligence.
+      </p>
+    </div>
+  </div>
 
-      <div class="card">
-        <h3>🚧 Coming Soon</h3>
-        <p>
-          Chrome extension, advanced permissions analyzer,
-          and AI-assisted code review.
-        </p>
-      </div>
-    </section>
+  <footer>
+    © 2025 Lightning Studio · Minimal. Powerful. Focused.
+  </footer>
 
-    <footer>
-      © 2025 Lightning Studio · Built for speed & clarity
-    </footer>
-  </main>
+</div>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const theme = params.get("theme") || "light";
-    document.documentElement.setAttribute("data-theme", theme);
-  </script>
-
+<script>
+  const params = new URLSearchParams(window.location.search);
+  document.documentElement.setAttribute(
+    "data-theme",
+    params.get("theme") || "light"
+  );
+</script>
 </body>
 </html>
