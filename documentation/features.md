@@ -1,33 +1,33 @@
- # ✨ Feature Highlights
+ # ✨ Feature  `(v4.0.0)`
 
 Everything you need for efficient Salesforce development — all in your browser.
 
----
 
-#### 🚀 Quick Development  
-Create or update:
+#### 🚀 Supported Metadata
+Build & Manage Salesforce Components:
 - **Lightning Web Components (LWC)**
+- **Aura Components**
+- **Apex Classes**
+- **Apex Triggers**
 - **Lightning Message Service (LMS)**
-- **Apex classes**
+- **Lightning Types (Agentforce)**
 
 No need to switch between tools or consoles.
 
 ---
-
-#### 🧱 Component File Creation  
-Generate specific files within LWC components:
-- `.html`, `.js`, `.css`, `.xml` (meta) 
-
-Helps maintain a clean and modular project structure.
+#### ⚡ Execute Anonymous Apex
+Run Execute Anonymous Apex code directly from the editor:
+- Test logic instantly and Debug faster
+- No need to open Salesforce Developer Console
 
 ---
 
-#### 🔍 Code Search  
-Easily search through:
-- LWC source files  
-- Apex classes
-
-Perfect for large codebases or fast navigation.
+#### 🌐 REST API Explorer
+Explore and test Salesforce REST APIs with ease:
+- Perform GET, POST, PUT, DELETE operations
+- View real-time API responses
+- Debug integrations faster
+- No external API tools needed.
 
 ---
 
@@ -50,28 +50,29 @@ Instantly convert your **SOQL queries** into **GraphQL** format. Great for trans
 ---
 
 #### 💾 Backup & Download  
-Download:
-- Individual files  
-- Full components  
-- Folders or complete ZIP archives
+Download all Salesforce metadata in one place:
+- Export complete metadata or selected components  
+- Download as package ZIP files   
 
-Keep your projects portable and safe.
-
----
-
-#### 🧹 Cleanup Tools  
-Easily delete:
-- Unused components  
-- Individual files
-
-Helps maintain a clean and optimized codebase.
+Ideal for backups, versioning, and portability.
 
 ---
 
+#### 🚀 Deployment  
+Deploy metadata directly using package ZIP files
+- Deploy selected components or complete metadata packages
+
+---
+ 
+#### 🔁 JSON → Apex Converter
+Automatically convert JSON into Apex wrapper class:
+- Strongly typed Apex models
+- Ready for API integrations
+
+---
 
 # 📝 Editor Experience 
----
-
+ 
 #### ⚡ Quick Deployment
 Instantly save and deploy your code with a single shortcut:  
 `CTRL + S` (Windows) or `⌘ + S` (Mac)  
@@ -92,11 +93,6 @@ Toggle between:
 Switch anytime to match your workflow and mood.
 
 ---
-
-#### 🎨 Customizable Themes
-Choose from a range of color themes to personalize your coding space. Whether you prefer minimal or vibrant, there's a theme for every developer style.
-
----
-
+ 
 
 _Enjoy faster, smarter Salesforce development with Lightning Studio!_
