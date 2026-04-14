@@ -150,7 +150,109 @@ font-family: "Montserrat", sans-serif;
   line-height: 1.65;
   color: var(--text-secondary);
 }
+ 
+ /* Banner */
+.yt-banner {
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(90deg, #fff5f5, #ffeaea);
+    border-top: 1px solid #ffd6d6;
+    border-bottom: 1px solid #ffd6d6;
+    padding: 10px 0;
+    margin-top: 1rem;
+}
 
+/* Layout */
+.yt-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0 15px;
+}
+
+/* Badge */
+.yt-badge {
+    background: #ff0000;
+    color: #fff;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    animation: pulse 1.5s infinite;
+}
+
+/* Marquee */
+.yt-marquee {
+    flex: 1;
+    overflow: hidden;
+}
+
+.yt-track {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll 20s linear infinite;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Pause on hover */
+.yt-banner:hover .yt-track {
+    animation-play-state: paused;
+}
+
+/* Buttons wrapper */
+.yt-actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* Common button */
+.yt-btn {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+/* 🔴 YouTube Subscribe Button */
+.yt-btn.primary {
+    background: #ff0000;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4);
+}
+
+.yt-btn.primary:hover {
+    background: #cc0000;
+    transform: scale(1.08);
+}
+
+/* 🎬 Secondary Button */
+.yt-btn.secondary {
+    background: #fff;
+    color: #ff0000;
+    border: 1px solid #ff0000;
+}
+
+.yt-btn.secondary:hover {
+    background: #ffeaea;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes scroll {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255,0,0,0.6); }
+    70% { box-shadow: 0 0 0 8px rgba(255,0,0,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,0,0,0); }
+}
+ 
 /* =======================
    FOOTER
 ======================= */
@@ -171,7 +273,7 @@ footer {
   <p class="tagline">Build Salesforce LWC development easy and fastest.</p>
 
   <!-- TAGS -->
-  <div class="tags">
+   <!--<div class="tags">
     <span class="tag">LWC</span>
     <span class="tag">Aura</span>
     <span class="tag">Apex</span>
@@ -179,7 +281,48 @@ footer {
     <span class="tag">GraphQL</span>
     <span class="tag">REST API</span>
     <span class="tag">Metadata</span>
-  </div>
+  </div>--> 
+  
+<div class="yt-banner">
+    <div class="yt-content">
+
+        <!-- NEW Badge -->
+        <span class="yt-badge">NEW</span>
+
+        <!-- Scrolling Text -->
+        <div class="yt-marquee">
+            <div class="yt-track">
+                👶 Cutest Baby Moments That Will Melt Your Heart ❤️ 
+                • 🍼 Daily Smiles & Giggles 😍 
+                • 😂 Funny Baby Videos You Can’t Stop Watching!
+
+                &nbsp;&nbsp;&nbsp;&nbsp;
+
+                👶 Don’t Miss Today’s Cutest Baby Clip 🎬 
+                • 💖 Feel Good Instantly  
+
+                &nbsp;&nbsp;&nbsp;&nbsp;
+
+                👶 Cutest Baby Moments That Will Melt Your Heart ❤️ 
+                • 🍼 Daily Smiles & Giggles 😍 
+                • 😂 Funny Baby Videos You Can’t Stop Watching!
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="yt-actions">
+            <a href="https://www.youtube.com/@DesiBossBaby?sub_confirmation=1" target="_blank" class="yt-btn primary">
+                ▶ Subscribe
+            </a>
+
+            <a href="https://www.youtube.com/@DesiBossBaby" target="_blank" class="yt-btn secondary">
+                🎬 Watch Now
+            </a>
+        </div>
+
+    </div>
+</div>
+
 
   <!-- GLASS CARDS -->
   <div class="glass-grid">
@@ -227,8 +370,7 @@ footer {
       This app is a UI design tool that helps developers, admins and designers quickly create Lightning Web Components. <a href="https://chromewebstore.google.com/detail/salesforce-markup-builder/dmikhohlckeamhjfgmkeincjbfgnlleh" target="_blank">Install Now</a>
     </p>
   </div>
-  </div>
-
+  </div> 
   <footer>
    Thank you for valuable feedback and feature enhancement requests. We truly appreciate your input.<br><br> #LightningStudio ❤️
   </footer>
