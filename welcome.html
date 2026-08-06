@@ -1,376 +1,377 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<title>Lightning Studio</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<style>
-/* =======================
-   THEME VARIABLES
-======================= */
-:root {
-  --bg: #f5f7fa;
+    <title>Lightning Studio</title>
 
-  /* Glass */
-  --glass-bg: rgba(255, 255, 255, 0.72);
-  --border: rgba(15, 23, 42, 0.08);
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:
+          Segoe UI,
+          Arial,
+          sans-serif;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      body {
+        background: #bdd8f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 18px;
+      }
+      .container {
+        width: 100%;
+        height: calc(100vh - 36px);
+        border-radius: 30px;
+        overflow: hidden;
+        position: relative;
+        background: linear-gradient(140deg, #eef8ff, #d9edff, #b7dbff);
+        box-shadow: 0 30px 70px rgba(0, 0, 0, 0.18);
+      }
+      .bg1 {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        right: -150px;
+        top: -150px;
+        background: #46b3ff;
+        filter: blur(140px);
+        opacity: 0.35;
+        border-radius: 50%;
+      }
+      .bg2 {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        left: -120px;
+        bottom: -120px;
+        background: #6d8cff;
+        filter: blur(130px);
+        opacity: 0.3;
+        border-radius: 50%;
+      }
+      nav {
+        height: 75px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 60px;
+        position: relative;
+        z-index: 10;
+      }
+      .logo {
+        font-size: 28px;
+        font-weight: 700;
+        color: #147bff;
+      }
+      nav ul {
+        display: flex;
+        gap: 45px;
+        list-style: none;
+        color: #5d6b79;
+        font-size: 15px;
+      }
+      nav li {
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      nav li:hover {
+        color: #147bff;
+      }
+      .doc {
+        background: white;
+        border: none;
+        padding: 13px 26px;
+        border-radius: 50px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+        text-decoration: none;
+        color: #1680ff;
+      }
+      .hero {
+        height: calc(100% - 75px);
+        display: flex;
+        align-items: center;
+        padding: 0 6%;
+        position: relative;
+      }
+      .left {
+        width: 42%;
+        z-index: 2;
+      }
+      .left h1 {
+        font-size: clamp(48px, 5vw, 90px);
+        line-height: 1;
+        color: #183458;
+        margin-bottom: 25px;
+      }
+      .left p {
+        width: 90%;
+        color: #5d6b79;
+        font-size: 18px;
+        line-height: 32px;
+        margin-bottom: 35px;
+      }
+      .buttons {
+        display: flex;
+        gap: 18px;
+      }
+      .primary {
+        border: none;
+        padding: 18px 34px;
+        background: #157dff;
+        color: white;
+        border-radius: 50px;
+        font-size: 16px;
+        cursor: pointer;
+        box-shadow: 0 20px 40px rgba(0, 100, 255, 0.35);
+        text-decoration: none;
+      }
+      .secondary {
+        border: none;
+        padding: 18px 34px;
+        background: white;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 16px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+        text-decoration: none;
+      }
+      .right {
+        width: 58%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      .circle {
+        position: absolute;
+        width: 540px;
+        height: 540px;
+        border-radius: 50%;
+        background: radial-gradient(circle, #ffffff, #7dd9ff8f, transparent);
+        filter: blur(50px);
+        animation: float 6s ease-in-out infinite;
+      }
+      .hero img {
+        width: min(38vw, 650px);
+        position: relative;
+        z-index: 2;
+        animation: updown 5s ease-in-out infinite;
+      }
+      @keyframes updown {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-12px);
+        }
+      }
+      @keyframes float {
+        50% {
+          transform: scale(1.08);
+        }
+      }
+      .blur {
+        position: absolute;
+        font-size: 10vw;
+        font-weight: 700;
+        color: white;
+        opacity: 0.25;
+        letter-spacing: 10px;
+        left: 50%;
+        top: 10%;
+        transform: translateX(-50%);
+      }
+      .cards {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 30px;
+        display: flex;
+        gap: 25px;
+        z-index: 20;
+      }
+      .card {
+        flex: 1;
+        min-width: 220px;
+        max-width: 280px;
+        height: 180px;
+        padding: 28px;
+        border-radius: 26px;
+        background: rgba(255, 255, 255, 0.22);
+        backdrop-filter: blur(18px);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        transition: 0.35s;
+      }
+      .card:hover {
+        transform: translateY(-8px);
+      }
+      .card.active {
+        background: rgba(255, 255, 255, 0.92);
+      }
+      .icon {
+        font-size: 40px;
+        margin-bottom: 15px;
+      }
+      .card h3 {
+        color: #183458;
+        margin-bottom: 12px;
+      }
+      .card p {
+        color: #476fa9;
+        line-height: 24px;
+        font-size: 14px;
+      }
+      .percent {
+        font-size: 55px;
+        color: #1b98ed;
+        font-weight: bold; 
+      }
+      .small {
+        margin-top: 12px;
+        color: #476fa9;
+      }
+      @media (max-width: 1000px) {
+        .hero {
+          flex-direction: column;
+          justify-content: center;
+          text-align: center;
+        }
+        .left,
+        .right {
+          width: 100%;
+        }
+        .left p {
+          width: 100%;
+        }
+        .right {
+          margin-top: 40px;
+        }
+        .cards {
+          display: none;
+        }
+        .blur {
+          display: none;
+        }
+        nav ul {
+          display: none;
+        }
+      }
+    </style>
+  </head>
 
-  /* Text */
-  --text-primary: #0f172a;
-  --text-secondary: #334155;
-  --text-muted: #64748b;
+  <body>
+    <div class="container">
+      <div class="bg1"></div>
+      <div class="bg2"></div>
 
-  --accent: #4f46e5;
-}
-
-[data-theme="dark"] {
-  --bg: #020617;
-
-  /* Glass */
-  --glass-bg: rgba(15, 23, 42, 0.72);
-  --border: rgba(255, 255, 255, 0.10);
-
-  /* Text */
-  --text-primary: #f8fafc;
-  --text-secondary: #e2e8f0;
-  --text-muted: #94a3b8;
-
-  --accent: #38bdf8;
-}
-
-/* =======================
-   BASE STYLES
-======================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: system-ui, sans-serif;
-}
-
-body {
-  min-height: 100vh;
-  background: var(--bg);
-  color: var(--text-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 48px 20px;
-}
-
-.container {
-  max-width: 1100px;
-  width: 100%;
-  text-align: center;
-}
-
-/* =======================
-   HERO
-======================= */
-.app-name {
-  font-size: clamp(3.2rem, 7vw, 4.6rem);  
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-}
-
-.tagline {
-  margin-top: 6px;
-  font-size: 1.2rem;
-  color: var(--text-secondary);
-  max-width: 720px;
-  margin-inline: auto;
-font-family: "Montserrat", sans-serif;
-}
-
-/* =======================
-   TAGS
-======================= */
-.tags {
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
-}
-
-.tag {
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: var(--glass-bg);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid var(--border);
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
-  color: var(--text-muted);
-}
-
-/* =======================
-   GLASS CARDS
-======================= */
-.glass-grid {
-  margin-top: 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 28px;
-}
-
-.glass-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 1.2rem;
-  text-align: left;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  box-shadow:
-    0 1px 1px rgba(0,0,0,0.04),
-    0 20px 40px rgba(0,0,0,0.12);
-}
-
-.glass-card:hover {
-  transform: translateY(-8px);
-  box-shadow:
-    0 2px 4px rgba(0,0,0,0.08),
-    0 30px 60px rgba(0,0,0,0.18);
-}
-
-.glass-card h3 {
-  font-size: 1rem;
-  margin-bottom: 10px;
-  color: var(--text-primary);
-}
-
-.glass-card p {
-  font-size: 14px;
-  line-height: 1.65;
-  color: var(--text-secondary);
-}
- 
- /* Banner */
-.yt-banner {
-    width: 100%;
-    overflow: hidden;
-    background: linear-gradient(90deg, #fff5f5, #ffeaea);
-    border-top: 1px solid #ffd6d6;
-    border-bottom: 1px solid #ffd6d6;
-    padding: 10px 0;
-    margin-top: 1rem;
-}
-
-/* Layout */
-.yt-content {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 0 15px;
-}
-
-/* Badge */
-.yt-badge {
-    background: #ff0000;
-    color: #fff;
-    font-size: 11px;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-weight: 700;
-    animation: pulse 1.5s infinite;
-}
-
-/* Marquee */
-.yt-marquee {
-    flex: 1;
-    overflow: hidden;
-}
-
-.yt-track {
-    display: inline-block;
-    white-space: nowrap;
-    animation: scroll 20s linear infinite;
-    font-size: 14px;
-    color: #333;
-}
-
-/* Pause on hover */
-.yt-banner:hover .yt-track {
-    animation-play-state: paused;
-}
-
-/* Buttons wrapper */
-.yt-actions {
-    display: flex;
-    gap: 8px;
-}
-
-/* Common button */
-.yt-btn {
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: all 0.3s ease;
-}
-
-/* 🔴 YouTube Subscribe Button */
-.yt-btn.primary {
-    background: #ff0000;
-    color: #fff;
-    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4);
-}
-
-.yt-btn.primary:hover {
-    background: #cc0000;
-    transform: scale(1.08);
-}
-
-/* 🎬 Secondary Button */
-.yt-btn.secondary {
-    background: #fff;
-    color: #ff0000;
-    border: 1px solid #ff0000;
-}
-
-.yt-btn.secondary:hover {
-    background: #ffeaea;
-    transform: scale(1.05);
-}
-
-/* Animations */
-@keyframes scroll {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-50%); }
-}
-
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(255,0,0,0.6); }
-    70% { box-shadow: 0 0 0 8px rgba(255,0,0,0); }
-    100% { box-shadow: 0 0 0 0 rgba(255,0,0,0); }
-}
- 
-/* =======================
-   FOOTER
-======================= */
-footer {
-  margin-top: 2rem;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-</style>
-</head>
-
-<body>
-<div class="container">
-
-  <!-- HERO -->
-  <h1 class="app-name">LIGHTNING STUDIO</h1>
-
-  <p class="tagline">Build Salesforce LWC development easy and fastest.</p>
-
-  <!-- TAGS -->
-   <!--<div class="tags">
-    <span class="tag">LWC</span>
-    <span class="tag">Aura</span>
-    <span class="tag">Apex</span>
-    <span class="tag">Lightning Types</span>
-    <span class="tag">GraphQL</span>
-    <span class="tag">REST API</span>
-    <span class="tag">Metadata</span>
-  </div>--> 
-  
-<div class="yt-banner">
-    <div class="yt-content">
-
-        <!-- NEW Badge -->
-        <span class="yt-badge">NEW</span>
-
-        <!-- Scrolling Text -->
-        <div class="yt-marquee">
-            <div class="yt-track">
-               👶 Cutest Baby Moments That Will Melt Your Heart • 😍 Daily Smiles & Giggles • 😂 Funny Baby Videos You Can’t Stop Watching! • 👶 Don’t Miss Today’s Cutest Baby Clip • 💖 Feel Good Instantly • 👶 Cutest Baby Moments That Will Melt Your Heart • ❤️ Daily Smiles & Giggles • 😍 Funny Baby Videos You Can’t Stop Watching!
-            </div>
+      <nav>
+        <div class="logo">
+          <img
+            src="https://nisar-99.github.io/lightning-studio/img/product-showcase/logo.png"
+            alt=""
+            srcset=""
+            style="padding-top: 8px"
+          />
         </div>
 
-        <!-- Buttons -->
-        <div class="yt-actions">
-            <a href="https://www.youtube.com/@DesiBossBaby?sub_confirmation=1" target="_blank" class="yt-btn primary">
-                ▶ Subscribe
-            </a>
+        <!-- <ul>
+<li>Home</li>
+<li>Features</li>
+<li>Tools</li>
+<li>Pricing</li>
+<li>Support</li>
+</ul> -->
 
-            <a href="https://www.youtube.com/@DesiBossBaby" target="_blank" class="yt-btn secondary">
-                🎬 Watch Now
-            </a>
+        <a class="doc" href="https://buymeacoffee.com/nisar99" target="_blank"
+          >❤︎ Become Supporter</a
+        >
+      </nav>
+
+      <div class="hero">
+        <div class="blur">LIGHTNING</div>
+
+        <div class="left">
+          <h1>
+            Build Faster.<br />
+            Zero Config.
+          </h1>
+
+          <p>
+            The Salesforce developer toolkit featuring Apex Editor, LWC Builder,
+            GraphQL Explorer, Org Backup and Deployment Manager, Diff Checker,
+            Execute Anonymous Apex, REST API Explorer - all in one place.
+          </p>
+
+          <div class="buttons">
+            <a
+              class="primary"
+              href="https://nisar-99.github.io/lightning-studio/"
+              target="_blank"
+              >Documentation</a
+            >
+
+            <!-- <button class="secondary">Explore Features</button> -->
+          </div>
         </div>
 
+        <div class="right">
+          <div class="circle"></div>
+
+          <!-- Replace this image -->
+          <img
+            src="https://raw.githubusercontent.com/Nisar-99/lightning-studio/refs/heads/documentation/img/mainlogo.png"
+          />
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <!-- <div class="icon">
+⚡
+</div> -->
+
+          <h3>Build & Edit</h3>
+
+          <p>
+            LWC, Aura, Apex Classes & Triggers, LMS, Lightning Types
+            (Agentforce), VF Page and Components.
+          </p>
+        </div>
+
+        <div class="card active">
+          <!-- <div class="icon">
+☁
+</div> -->
+
+          <h3>Privacy & Security</h3>
+
+          <p>
+            This app runs entirely on your local system. It uses no third-party
+            services and collects no user data.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="percent">125K+</div>
+
+          <div class="small">Developers Worldwide</div>
+        </div>
+      </div>
     </div>
-</div>
-
-
-  <!-- GLASS CARDS -->
-  <div class="glass-grid">
-    <div class="glass-card">
-    <h3>🧩 Build & Edit</h3>
-    <p>
-      LWC, Aura, Apex Classes & Triggers, LMS,
-      Lightning Types (Agentforce).
-    </p>
-  </div>
-
-  <div class="glass-card">
-    <h3>⚡ Smart Work</h3>
-    <p>
-      Available LWC & JS Emmet,
-      Execute Anonymous Apex, REST API Explorer & GraphQL tools.
-    </p>
-  </div>
-
-  <div class="glass-card">
-    <h3>📦 Package & Utilities</h3>
-    <p>
-      Backup & deploy metadata, Code Diff,
-      JSON → Apex, JSON/XML beautifier.
-    </p>
-  </div>
-
-  <div class="glass-card">
-    <h3>🔐 Privacy & Security</h3>
-    <p>
-      This app operates entirely on your local system. It does not rely on third-party services or collect any user data, making it safe and secure to use.
-    </p>
-  </div>
-
-  <div class="glass-card">
-    <h3>📊️ Salesforce Log Inspector</h3>
-    <p>
-      This app helps you inspect, analyze, and optimize your Salesforce debug log.
-      Try them out and share your feedback with us. <a href="https://chromewebstore.google.com/detail/salesforce-log-inspector/jebmhhcaiafpcjneboknfkmijegiihoe" target="_blank">Install Now</a>
-    </p>
-  </div>
-      <div class="glass-card">
-    <h3>🧮 Salesforce Markup Builder</h3>
-    <p>
-      This app is a UI design tool that helps developers, admins and designers quickly create Lightning Web Components. <a href="https://chromewebstore.google.com/detail/salesforce-markup-builder/dmikhohlckeamhjfgmkeincjbfgnlleh" target="_blank">Install Now</a>
-    </p>
-  </div>
-  </div> 
-  <footer>
-   Thank you for valuable feedback and feature enhancement requests. We truly appreciate your input.<br><br> #LightningStudio ❤️
-  </footer>
-
-</div>
-
-<script>
-  const params = new URLSearchParams(window.location.search);
-  document.documentElement.setAttribute(
-    "data-theme",
-    params.get("theme") || "light"
-  );
-</script>
-
-</body>
+  </body>
 </html>
