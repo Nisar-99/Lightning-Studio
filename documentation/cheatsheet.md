@@ -8,7 +8,7 @@ A quick reference for snippet triggers and their content to speed up your Salesf
 
 | Trigger | Tag             | File | Content Example                                     |
 |---------|------------------|----------|-----------------------------------------------------|
-| `lwc:`  | All `lightning-*`        | HTML     | `lwc:button`, `lwc:input`, `lwc:layout`, `lwc:iteration` ... |
+| `lightning-`  | All `lightning-*`        | HTML     | `lwc:button`, `lwc:input`, `lwc:layout`, `lwc:iteration` ... |
 | `slds:` | HTML Core with `SLDS` Classes             | HTML     | `slds:modal`, `slds:table`, `slds:select` ...        |
 | `lwc:`  | XML Configuration Tags | XML      | `lwc:target`, `lwc:target-community`, `lwc:design` ... |
  
