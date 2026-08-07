@@ -7,6 +7,18 @@
     <title>Lightning Studio</title>
 
     <style>
+
+ 
+:root {
+  --bg: #f5f7fa; 
+}
+
+[data-theme="dark"] {
+  --bg: #020617; 
+}
+
+
+
       * {
         margin: 0;
         padding: 0;
@@ -15,8 +27,7 @@
           Segoe UI,
           Arial,
           sans-serif;
-      } 
-      .test{color:#fff;}
+      }  
       html,
       body {
         width: 100%;
@@ -24,7 +35,7 @@
         overflow: hidden;
       }
       body {
-        background: #f7f7fa;
+        background: var(--bg);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -362,5 +373,15 @@
         </div>
       </div>
     </div>
+
+    <script>
+  const params = new URLSearchParams(window.location.search);
+  document.documentElement.setAttribute(
+    "data-theme",
+    params.get("theme") || "light"
+  );
+</script>
+
+
   </body>
 </html>
